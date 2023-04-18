@@ -1,1 +1,3 @@
 apps/api/src/controllers/search.js
+data/
+esdata/

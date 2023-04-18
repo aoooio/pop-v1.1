@@ -2,6 +2,7 @@
   "name": "pop_production",
   "version": "2.0.1",
   "dependencies": {
+    "@elastic/elasticsearch": "^7.17.0",
     "@popperjs/core": "^2.9.3",
     "@popproject/pop-react-elasticsearch": "^2.1.11",
     "acorn": "^8.4.1",

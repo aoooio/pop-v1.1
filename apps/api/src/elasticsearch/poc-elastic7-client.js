@@ -1,5 +1,5 @@
 const AWS = require("aws-sdk");
-const { esUrl, esPort } = require("./config.js");
+const { esUrl, esPort } = require("../config.js");
 
 const getElasticInstance = () => {
   let options;
@@ -19,8 +19,15 @@ const getElasticInstance = () => {
     options = { host: esUrl };
   }
 
-  let elasticClient = require("elasticsearch").Client(options);
-  return elasticClient;
+  const { Client } = require('@elastic/elasticsearch')
+  // TODO: Make elasticsearch working 
+  const client = new Client({
+    node: `${esUrl}`
+  })
+  return client;
+
+//   let elasticClient = require("elasticsearch").Client(options);
+//   return elasticClient;
 };
 
 module.exports = getElasticInstance;
