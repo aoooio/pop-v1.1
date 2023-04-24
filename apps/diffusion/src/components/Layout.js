@@ -4,6 +4,7 @@ import { Container, Alert } from "reactstrap";
 import Version from "../../../version.json";
 import Cookies from 'universal-cookie';
 import API from '../../src/services/api';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const message_maintenance = "Une opération de maintenance est en cours. Elle peut fausser l’affichage des résultats. Nous vous présentons nos excuses pour la gêne occasionnée. L’opération devrait être finie le 12 avril 2022";
 
@@ -48,12 +49,36 @@ export default class Layout extends React.Component {
               </a>
             </Link>
             <h3 className="Title">POP : la plateforme ouverte du patrimoine</h3>
-            <div className="right-container">
+            <div className="right-container nav-desktop">
               <div className="linkBucket">
                 <Link href="/bucket">
                   <a className="btn btn-outline-danger onPrintHide">
                     <div className="btn-bucket">
                       <div id="nbBucket">{this.state.countBucket != 0 ? "Consulter mon panier ( " + this.state.countBucket + " )" : "Panier vide"} </div>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+              {
+              <div>
+                <a
+                  href="https://framaforms.org/ameliorez-pop-1663925372"
+                  className="btn btn-outline-danger onPrintHide"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Améliorez POP !
+                </a>
+              </div>
+               }
+            </div>
+            <div className="right-container nav-burger">
+              <div className="linkBucket">
+                <Link href="/bucket">
+                  <a className="btn btn-outline-danger onPrintHide">
+                    <div className="btn-bucket">
+                    {/* <FontAwesomeIcon icon="fa-light fa-basket-shopping-simple" /> */}
+                    <i className="fa-sharp fa-solid fa-basket-shopping"></i>
                     </div>
                   </a>
                 </Link>
@@ -138,6 +163,15 @@ export default class Layout extends React.Component {
             background-color: #c43a2f;
             color: #fff;
           }
+
+          .header .right-container.nav-burger {
+            display: none;
+          }
+
+          .header .right-container.nav-desktop {
+            display: flex;
+          }
+
           #beta {
             position: absolute;
             width: 120px;
@@ -222,6 +256,9 @@ export default class Layout extends React.Component {
             font-weight: 700;
           }
 
+          /* =========================
+          *  Mobile & tablette
+          ========================= */
           @media screen and (max-width: 767px) {
             .company-title span {
               font-size: 16px;
@@ -267,12 +304,23 @@ export default class Layout extends React.Component {
             border-radius: 5px;
           }
 
+          /* =========================
+          *  Mobile 
+          ========================= */
           @media screen and (max-width: 590px) {
             .footer a,
             .footer a:hover {
               line-height: 20px;
               margin-top: 10px;
             }
+
+          .header .right-container.nav-burger {
+            display: flex;
+          }
+
+          .header .right-container.nav-desktop {
+            display: none;
+          }
           }
 
           @media screen and (min-width: 589px) {
