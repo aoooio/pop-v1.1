@@ -49,6 +49,7 @@ export default class Layout extends React.Component {
               </a>
             </Link>
             <h3 className="Title">POP : la plateforme ouverte du patrimoine</h3>
+            {/* <!-- Menu desktop --> */}
             <div className="right-container nav-desktop">
               <div className="linkBucket">
                 <Link href="/bucket">
@@ -72,29 +73,17 @@ export default class Layout extends React.Component {
               </div>
                }
             </div>
+            {/* <!-- Menu mobile: burger --> */}
             <div className="right-container nav-burger">
               <div className="linkBucket">
                 <Link href="/bucket">
-                  <a className="btn btn-outline-danger onPrintHide">
+                  <a className="onPrintHide">
                     <div className="btn-bucket">
-                    {/* <FontAwesomeIcon icon="fa-light fa-basket-shopping-simple" /> */}
-                    <i className="fa-sharp fa-solid fa-basket-shopping"></i>
+                      <img src="/static/burger.svg" alt="Logo" className="md" width="32px" />
                     </div>
                   </a>
                 </Link>
               </div>
-              {
-              <div>
-                <a
-                  href="https://framaforms.org/ameliorez-pop-1663925372"
-                  className="btn btn-outline-danger onPrintHide"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Améliorez POP !
-                </a>
-              </div>
-               }
             </div>
           </Container>
           <Alert
