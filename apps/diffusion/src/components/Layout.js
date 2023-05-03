@@ -161,6 +161,11 @@ export default class Layout extends React.Component {
             display: flex;
           }
 
+          {/* BYpass bad heading in notice page */}
+          .heading.heading-center {
+            width: 100% !important;
+          }
+
           #beta {
             position: absolute;
             width: 120px;
