@@ -28,5 +28,29 @@ services:
     networks:
       - mongo_elasticsearch_network
 
+  # For api test purpose 
+  api:
+    build:
+      context: ./apps/api
+    environment:
+      ES_ENDPOINT: http://elasticsearch:9200
+      DB_ENDPOINT: mongodb://mongodb:27017
+    ports:
+      - "3000:3000"
+    networks:
+      - mongo_elasticsearch_network
+
+  # For production test purpose 
+  production:
+    build:
+      context: ./apps/production
+    environment:
+      API_URL: http://api:3000
+      POP_URL: http://api:3001
+    ports:
+      - "8080:8081"
+    networks:
+      - mongo_elasticsearch_network
+
 networks:
   mongo_elasticsearch_network:

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "reactstrap";
-import Version from "../../../../version.json";
+import Version from "../../../version.json";
 import "./index.css";
 
 export default class Home extends React.Component {
